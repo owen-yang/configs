@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.62.4",
+  "exclusionRules": [
+    {
+      "pattern": "*youtube.com*",
+      "passKeys": "jkl"
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "unmapAll\n\nmap ? showHelp\n\n# Movement\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\nmap J scrollFullPageDown\nmap K scrollFullPageUp\nmap G scrollToBottom\nmap gg scrollToTop\n\n# Navigation\nmap H goBack\nmap L goForward\n\n# Tabs\nmap <a-˙> previousTab\nmap <a-¬> nextTab\n\n# Find\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\n\n# Links\nmap f LinkHints.activateMode\nmap F LinkHints.activateModeToOpenInNewTab\n\n# Bookmarks\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\n\n# Vomnibar\nmap o Vomnibar.activate\nmap O Vomnibar.activateInNewTab\n\n# Visual\nmap v enterVisualMode\nmap V enterVisualLineMode",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 400,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "a: https://www.amazon.com/s/?url=search-alias&field-keywords=%s Amazon",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
