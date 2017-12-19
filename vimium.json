@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "unmapAll\n\nmap ? showHelp\n\n# Movement\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\nmap J scrollFullPageDown\nmap K scrollFullPageUp\nmap G scrollToBottom\nmap gg scrollToTop\n\n# Navigation\nmap H goBack\nmap L goForward\n\n# Tabs\nmap <a-˙> previousTab\nmap <a-¬> nextTab\n\n# Find\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\n\n# Links\nmap f LinkHints.activateMode\nmap F LinkHints.activateModeToOpenInNewTab\n\n# Bookmarks\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\n\n# Vomnibar\nmap o Vomnibar.activate\nmap O Vomnibar.activateInNewTab\n\n# Visual\nmap v enterVisualMode\nmap V enterVisualLineMode",
+  "keyMappings": "unmapAll\n\nmap ? showHelp\n\n# Movement\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\nmap J scrollFullPageDown\nmap K scrollFullPageUp\nmap G scrollToBottom\nmap gg scrollToTop\n\n# Navigation\nmap H goBack\nmap L goForward\n\n# Tabs\nmap <a-˙> previousTab\nmap <a-¬> nextTab\nmap <a-Ó> moveTabLeft\nmap <a-Ò> moveTabRight\n\n# Find\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\n\n# Links\nmap f LinkHints.activateMode\nmap F LinkHints.activateModeToOpenInNewTab\n\n# Bookmarks\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\n\n# Vomnibar\nmap o Vomnibar.activate\nmap O Vomnibar.activateInNewTab\n\n# Visual\nmap v enterVisualMode\nmap V enterVisualLineMode",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
