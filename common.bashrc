@@ -1,3 +1,4 @@
+# Git
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
@@ -11,9 +12,9 @@ alias gr="git reset"
 alias grh="git reset --hard"
 alias gst="git stash"
 
+# Misc
 alias see="less"
 alias du="du -h"
 alias df="diff"
-alias ls="ls -lh --color=always"
 alias fs="ls -tr"
 alias dd="rm"
