@@ -14,6 +14,7 @@ alias gst="git stash"
 
 # Misc
 alias see="less"
+alias seef="less +F"
 alias du="du -h"
 alias df="diff"
 alias fs="ls -tr"
