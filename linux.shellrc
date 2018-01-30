@@ -1,0 +1,4 @@
+alias ls="ls -lh --color=always"
+
+alias watch="watch -n 0.5"
+alias watchproc="watch \"ps -ef | grep\""
