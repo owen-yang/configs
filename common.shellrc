@@ -12,6 +12,7 @@ alias gr="git reset"
 alias grh="git reset --hard"
 alias gst="git stash"
 alias gsts="git stash save"
+alias gp="git push"
 
 # Misc
 alias see="less"
