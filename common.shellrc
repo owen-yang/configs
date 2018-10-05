@@ -15,6 +15,7 @@ alias gsts="git stash save"
 alias gp="git push"
 
 # Misc
+alias less="less -R"
 alias see="less"
 alias seef="less +F"
 alias du="du -h"
