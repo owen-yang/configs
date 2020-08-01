@@ -15,8 +15,11 @@ alias gst="git stash"
 alias gsts="git stash save"
 alias gp="git push"
 
+# Svn
+alias scm="svn commit -m"
+
 # Misc
-alias less="less -R"
+alias less="less -R --follow-name --line-numbers"
 alias see="less"
 alias seef="less +F"
 alias du="du -sh"
@@ -25,3 +28,4 @@ alias fsr="ls -t"
 alias fs="fsr -r"
 alias ll="ls -lh"
 alias dd="rm"
+alias view="vim -R"
