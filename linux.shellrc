@@ -2,3 +2,6 @@ alias ls="ls -lh --color=always"
 
 alias watch="watch -d -n 1"
 alias watchproc="watch \"ps -ef | grep\""
+
+alias showhugepages="cat /proc/meminfo | grep Huge"
+alias sethugepages128="sudo sysctl -w vm.nr_hugepages=128"
