@@ -30,7 +30,7 @@ alias gg="git grep"
 alias gfm="git fetch origin master:master"
 
 get_stashref() {
-    if [$# -gt 1 ]; then
+    if [ $# -gt 1 ]; then
         >&2 echo "error: only one stash# argument supported"
         exit 1
     elif [ $# -eq 1 ]; then
@@ -68,7 +68,7 @@ alias less="less -R --follow-name --line-numbers"
 alias see="less"
 alias seef="less +F"
 alias du="du -sh"
-alias df="diff"
+alias df="df -h"
 alias fsr="ls -t"
 alias fs="fsr -r"
 alias ll="ls -lAh"
