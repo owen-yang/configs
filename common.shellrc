@@ -6,17 +6,59 @@ alias gdl="git diff HEAD~ HEAD"
 alias ga="git add"
 alias gap="git add -p"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias gb="git branch"
 alias gcm="git commit -m"
+alias gca="git commit --amend --no-edit"
 alias gl="git log"
 alias gu="git reset --soft HEAD~"
 alias gr="git reset"
 alias grh="git reset --hard"
-alias gst="git stash"
-alias gsts="git stash save"
 alias gp="git push"
 alias gpa="git push --all"
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias grbs="git rebase --skip"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias grbm="git rebase master"
+alias gst="git stash"
+alias gstp="git stash push -m"
+alias gstl="git stash list"
+alias gg="git grep"
+alias gfm="git fetch origin master:master"
+
+get_stashref() {
+    if [$# -gt 1 ]; then
+        >&2 echo "error: only one stash# argument supported"
+        exit 1
+    elif [ $# -eq 1 ]; then
+        echo "stash@{$1}"
+    else
+        echo "stash@{0}"
+    fi
+}
+
+gstpop() {
+    stashref=$(get_stashref $@) || return 1
+    git stash pop "$stashref"
+}
+
+gstdrop() {
+    stashref=$(get_stashref $@) || return 1
+    git stash drop "$stashref"
+}
+
+gsts() {
+    stashref=$(get_stashref $@) || return 1
+    git stash show "$stashref"
+}
+
+gstsp() {
+    stashref=$(get_stashref $@) || return 1
+    git stash show -p "$stashref"
+}
 
 # Svn
 alias scm="svn commit -m"
@@ -30,5 +72,7 @@ alias df="diff"
 alias fsr="ls -t"
 alias fs="fsr -r"
 alias ll="ls -lAh"
+alias llg="ll | grep"
 alias dd="rm"
 alias view="vim -R"
+alias tma="tmux attach-session -t 0"
