@@ -1,9 +1,9 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-source "$SCRIPT_DIR/common.shellrc"
+. "$SCRIPT_DIR/common.shellrc"
 
 alias bashrc="vim \"$HOME/.bashrc\""
-alias src="source \"$HOME/.bashrc\""
+alias src=". \"$HOME/.bashrc\""
 
 export OWEN_CONFIGS="$SCRIPT_DIR"
 alias owenconfigs="cd $OWEN_CONFIGS"

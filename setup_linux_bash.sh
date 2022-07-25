@@ -6,7 +6,7 @@ OWEN_CONFIGS_WATERMARK_BASH="# OWEN_CONFIGS_SETUP"
 if ! grep -qs "$OWEN_CONFIGS_WATERMARK_BASH" "$HOME/.bashrc"; then
     echo "" >> "$HOME/.bashrc"
     echo "$OWEN_CONFIGS_WATERMARK_BASH" >> "$HOME/.bashrc"
-    echo "source \"$SCRIPT_DIR/linux.bashrc\"" >> "$HOME/.bashrc"
+    echo ". \"$SCRIPT_DIR/linux.bashrc\"" >> "$HOME/.bashrc"
     echo "" >> "$HOME/.bashrc"
 fi
 
