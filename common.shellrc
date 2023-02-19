@@ -2,13 +2,14 @@
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias gdl="git diff HEAD~ HEAD"
 alias ga="git add"
 alias gap="git add -p"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcop="git checkout -p"
 alias gb="git branch"
+alias gsw="git switch"
+alias gswc="git switch -c"
 alias gcm="git commit -m"
 alias gca="git commit --amend --no-edit"
 alias gl="git log"
@@ -16,18 +17,38 @@ alias gu="git reset --soft HEAD~"
 alias gr="git reset"
 alias grh="git reset --hard"
 alias gp="git pull"
+alias gpr="git pull --rebase"
 alias gprb="git pull --rebase"
+alias gprbi="git pull --rebase=interactive"
 alias grb="git rebase"
-alias grbi="git rebase -i"
 alias grbs="git rebase --skip"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias grbm="git rebase master"
+alias grbim="git rebase -i master"
 alias gst="git stash"
 alias gstp="git stash push -m"
 alias gstl="git stash list"
 alias gg="git grep"
 alias gfm="git fetch origin master:master"
+
+grbi() {
+    [ $# -le 1 ] || { >&2 echo "error: only one ref argument supported" && return 1; }
+    if [ $# -eq 1 ]; then
+        git rebase -i $1
+    else
+        git rebase -i HEAD~10
+    fi
+}
+
+gdl() {
+    [ $# -le 1 ] || { >&2 echo "error: only one ref argument supported" && return 1; }
+    if [ $# -eq 1 ]; then
+        git diff $1~ $1
+    else
+        git diff HEAD~ HEAD
+    fi
+}
 
 get_stashref() {
     if [ $# -gt 1 ]; then
@@ -38,6 +59,10 @@ get_stashref() {
     else
         echo "stash@{0}"
     fi
+}
+
+gstps() {
+    git stash -- $(git diff --staged --name-only)
 }
 
 gstpop() {
@@ -63,16 +88,34 @@ gstsp() {
 # Svn
 alias scm="svn commit -m"
 
-# Misc
-alias less="less -R --follow-name --line-numbers"
-alias see="less"
+# less
+alias less="less -R --follow-name --line-numbers --ignore-case"
+alias l="less"
+alias ess="less"
 alias seef="less +F"
-alias du="du -sh"
-alias df="df -h"
+
+# grep
+alias g="egrep -i"
+
+# ls
 alias fsr="ls -t"
 alias fs="fsr -r"
 alias ll="ls -lAh"
-alias llg="ll | grep"
+alias llg="ll | g"
+
+# Misc
+alias du="du -sh"
+alias df="df -h"
 alias dd="rm"
 alias view="vim -R"
-alias tma="tmux attach-session -t 0"
+
+# tmux attach
+#alias tma="tmux attach-session -t 0"
+tma() {
+    [ $# -le 1 ] || { >&2 printf "error: at most 1 argument expected\nusage: tma [SESSION]\n" && return 1; }
+    if [ $# -eq 1 ]; then
+        tmux attach-session -t $1
+    else
+        tmux attach-session -t 0
+    fi
+}
