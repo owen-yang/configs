@@ -6,12 +6,13 @@ alias ga="git add"
 alias gap="git add -p"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias gcop="git checkout -p"
+alias gcop="git checkout --patch"
 alias gb="git branch"
 alias gsw="git switch"
 alias gswc="git switch -c"
 alias gcm="git commit -m"
 alias gca="git commit --amend --no-edit"
+alias gcae="git commit --amend"
 alias gl="git log"
 alias gu="git reset --soft HEAD~"
 alias gr="git reset"
@@ -37,7 +38,7 @@ grbi() {
     if [ $# -eq 1 ]; then
         git rebase -i $1
     else
-        git rebase -i HEAD~10
+        git rebase -i HEAD~15
     fi
 }
 
@@ -95,7 +96,8 @@ alias ess="less"
 alias seef="less +F"
 
 # grep
-alias g="egrep -i"
+alias g="egrep"
+alias gi="egrep -i"
 
 # ls
 alias fsr="ls -t"
@@ -108,6 +110,7 @@ alias du="du -sh"
 alias df="df -h"
 alias dd="rm"
 alias view="vim -R"
+alias v="view"
 
 # tmux attach
 #alias tma="tmux attach-session -t 0"
