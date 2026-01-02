@@ -50,6 +50,9 @@ set smartcase
 " When a bracket is inserted, briefly jump to the matching one
 set showmatch
 
+" Copies to system clipboard
+set clipboard+=unnamedplus
+
 noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz
 noremap h hzz

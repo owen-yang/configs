@@ -2,27 +2,32 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-OWEN_CONFIGS_WATERMARK_BASH="# OWEN_CONFIGS_SETUP"
-if ! grep -qs "$OWEN_CONFIGS_WATERMARK_BASH" "$HOME/.bashrc"; then
-    echo "" >> "$HOME/.bashrc"
-    echo "$OWEN_CONFIGS_WATERMARK_BASH" >> "$HOME/.bashrc"
-    echo ". \"$SCRIPT_DIR/linux.bashrc\"" >> "$HOME/.bashrc"
-    echo "" >> "$HOME/.bashrc"
+WATERMARK_SLUG="OWEN_CONFIGS_SETUP"
+
+WATERMARK="# $WATERMARK_SLUG"
+file="$HOME/.bashrc"
+if ! grep -qs "$WATERMARK" "$file"; then
+    echo "" >> "$file"
+    echo "$WATERMARK" >> "$file"
+    echo ". \"$SCRIPT_DIR/linux.bashrc\"" >> "$file"
+    echo "" >> "$file"
 fi
 
-OWEN_CONFIGS_WATERMARK_VIMRC="\" OWEN_CONFIGS_SETUP"
-if ! grep -qs "$OWEN_CONFIGS_WATERMARK_VIMRC" "$HOME/.vimrc"; then
-    echo "" >> "$HOME/.vimrc"
-    echo "$OWEN_CONFIGS_WATERMARK_VIMRC" >> "$HOME/.vimrc"
-    echo "source $SCRIPT_DIR/vimrc" >> "$HOME/.vimrc"
-    echo "" >> "$HOME/.vimrc"
+WATERMARK="\" $WATERMARK_SLUG"
+file="$HOME/.vimrc"
+if ! grep -qs "$WATERMARK" "$file"; then
+    echo "" >> "$file"
+    echo "$WATERMARK" >> "$file"
+    echo "source $SCRIPT_DIR/vimrc" >> "$file"
+    echo "" >> "$file"
 fi
 
-OWEN_CONFIGS_WATERMARK_TMUX="# OWEN_CONFIGS_SETUP"
-if ! grep -qs "$OWEN_CONFIGS_WATERMARK_TMUX" "$HOME/.tmux.conf"; then
-    echo "" >> "$HOME/.tmux.conf"
-    echo "$OWEN_CONFIGS_WATERMARK_TMUX" >> "$HOME/.tmux.conf"
-    echo "source \"$SCRIPT_DIR/common.tmux.conf\"" >> "$HOME/.tmux.conf"
-    echo "" >> "$HOME/.tmux.conf"
+WATERMARK="# $WATERMARK_SLUG"
+file="$HOME/.tmux.conf"
+if ! grep -qs "$WATERMARK" "$file"; then
+    echo "" >> "$file"
+    echo "$WATERMARK" >> "$file"
+    echo "source \"$SCRIPT_DIR/common.tmux.conf\"" >> "$file"
+    echo "" >> "$file"
 fi
 

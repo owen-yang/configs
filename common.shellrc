@@ -8,12 +8,13 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcop="git checkout --patch"
 alias gb="git branch"
-alias gsw="git switch"
+alias gbd="git branch -D"
 alias gswc="git switch -c"
 alias gcm="git commit -m"
 alias gca="git commit --amend --no-edit"
 alias gcae="git commit --amend"
 alias gl="git log"
+alias gls="git log -S" # search for a string in git log
 alias gu="git reset --soft HEAD~"
 alias gr="git reset"
 alias grh="git reset --hard"
@@ -26,10 +27,12 @@ alias grbs="git rebase --skip"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias grbm="git rebase master"
-alias grbim="git rebase -i master"
-alias gst="git stash"
-alias gstp="git stash push -m"
+alias grbim="git rebase -i master --update-refs"
+alias gst="git stash push"
+alias gstp="git stash push --patch"
+alias gstm="git stash push --message"
 alias gstl="git stash list"
+alias gstlist="git stash list"
 alias gg="git grep"
 alias gfm="git fetch origin master:master"
 
@@ -38,7 +41,7 @@ grbi() {
     if [ $# -eq 1 ]; then
         git rebase -i $1
     else
-        git rebase -i HEAD~15
+        git rebase -i HEAD~20
     fi
 }
 
@@ -76,12 +79,12 @@ gstdrop() {
     git stash drop "$stashref"
 }
 
-gsts() {
+gstshow() {
     stashref=$(get_stashref $@) || return 1
     git stash show "$stashref"
 }
 
-gstsp() {
+gstshowp() {
     stashref=$(get_stashref $@) || return 1
     git stash show -p "$stashref"
 }
@@ -93,24 +96,36 @@ alias scm="svn commit -m"
 alias less="less -R --follow-name --line-numbers --ignore-case"
 alias l="less"
 alias ess="less"
+alias see="less"
 alias seef="less +F"
 
 # grep
 alias g="egrep"
-alias gi="egrep -i"
+alias gi="egrep --ignore-case"
+
+# rg
+alias rg="rg --search-zip"
+alias rgi="rg --search-zip --ignore-case"
 
 # ls
 alias fsr="ls -t"
 alias fs="fsr -r"
-alias ll="ls -lAh"
+alias ll="ls -l --almost-all --human-readable --dereference-command-line"
 alias llg="ll | g"
+
+# clang-format
+alias clf="clang-format"
+
+# cd
+alias cdp="cd -P"
 
 # Misc
 alias du="du -sh"
 alias df="df -h"
 alias dd="rm"
 alias view="vim -R"
-alias v="view"
+alias v="vim"
+alias htop="htop -d 5"
 
 # tmux attach
 #alias tma="tmux attach-session -t 0"

@@ -9,13 +9,13 @@ file="$HOME/.zshrc"
 if ! grep -qs "$WATERMARK" "$file"; then
     echo "" >> "$file"
     echo "$WATERMARK" >> "$file"
-    echo ". \"$SCRIPT_DIR/linux.bashrc\"" >> "$file"
+    echo ". \"$SCRIPT_DIR/linux.zshrc\"" >> "$file"
     echo "" >> "$file"
 fi
 
 WATERMARK="\" $WATERMARK_SLUG"
 file="$HOME/.vimrc"
-if ! grep -qs "$OWEN_CONFIGS_WATERMARK_VIMRC" "$file"; then
+if ! grep -qs "$WATERMARK" "$file"; then
     echo "" >> "$file"
     echo "$WATERMARK" >> "$file"
     echo "source $SCRIPT_DIR/vimrc" >> "$file"
